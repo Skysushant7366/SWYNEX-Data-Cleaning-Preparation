@@ -59,7 +59,7 @@
 SWYNEX-Data-Cleaning-Preparation/
 ├── startup_funding.csv                      # Original raw data (untouched)
 ├── cleaned_startup_funding.csv              # Final cleaned data
-├── Startup_Funding_Data_Cleaning.ipynb      # Full notebook with every step
+├── Indian_Startup_Funding_Data_Cleaning_&_Preparation.ipynb   # Full notebook with every step
 └── README.md                                # This document
 ```
 
@@ -124,11 +124,11 @@ Commas and `+` removed; non-numeric values (`undisclosed`, `unknown`, `N/A`) bec
 ```python
 c = df['city'].str.replace(r'\\+xc2\\+xa0', '', regex=True).str.strip()
 c = c.str.split(r'\s*/\s*', regex=True).str[0]      # keep the first city
-c = c.replace({'Bangalore':'Bengaluru', 'Kormangala':'Bengaluru', 'Gurgaon':'Gurugram',
-               'Delhi':'New Delhi', 'Ahemadabad':'Ahmedabad', 'Trivandrum':'Thiruvananthapuram'})
+c = c.replace({'Bangalore':'Bengaluru', 'Gurgaon':'Gurugram', 'Delhi':'New Delhi',
+               'Ahemadabad':'Ahmedabad', 'Trivandrum':'Thiruvananthapuram'})
 df['city'] = c.fillna('Unknown')
 ```
-Multi-city cells keep the first (primary) city; spelling variants and neighbourhoods are merged; missing becomes `Unknown`.
+Multi-city cells keep the first (primary) city; spelling variants are merged; missing becomes `Unknown`.
 
 ### Step 6: Group `investment_type` into clean categories
 A small function maps 50+ raw labels into 16 categories using lowercase keyword checks (`seed`/`angel` → Seed/Angel, `debt`/`loan` → Debt, `series a`…`series j`, `pre-series a`, `private`/`equity` → Private Equity, `crowd` → Crowdfunding, otherwise Other / Unknown).
@@ -260,7 +260,7 @@ df.to_csv('cleaned_startup_funding.csv', index=False)
 ## 10. How to Reproduce
 
 1. Clone this repository.
-2. Open `Startup_Funding_Data_Cleaning.ipynb` in Google Colab or Jupyter.
+2. Open `Indian_Startup_Funding_Data_Cleaning_&_Preparation.ipynb` in Google Colab or Jupyter.
 3. Update the file path in Step 1 to where `startup_funding.csv` is stored.
 4. Run all cells (**Runtime → Run all**).
 5. The cleaned file is written as `cleaned_startup_funding.csv`.
