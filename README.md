@@ -284,7 +284,7 @@ df.to_csv('cleaned_startup_funding.csv', index=False)
 **Sushant Kumar Yadav**
 Aspiring Data Analyst · B.Com (Hons), University of Delhi
 
-LinkedIn: *add your profile link here*
+LinkedIn: [www.linkedin.com/in/sushantkumaryadav310899](https://www.linkedin.com/in/sushantkumaryadav310899/)
 GitHub: [Skysushant7366](https://github.com/Skysushant7366)
-
+Portfolio: [https://skysushant7366.github.io/Sushant-portfolio/](https://skysushant7366.github.io/Sushant-portfolio/))
 *Completed as Task 1 of the Data Analyst Internship at SWYNEX Technologies.*
